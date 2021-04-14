@@ -1,0 +1,177 @@
+﻿@model IEnumerable<ATMWeb.Models.Notas>
+@{
+    ViewData["Title"] = "NotasDisponiveis";
+}
+
+
+@{
+
+    int nt = 0; foreach (var item in Model) { nt += item.Qtde; }
+
+    if (nt > 0){
+    <div class="text-center">
+
+        <div  class="row">
+            
+            <table id="centralizar">
+                <tr>
+                    <td>
+                        @foreach (var item in Model)
+                        {
+                            <div class="col">
+                                @if (item.Valor == 2 && item.Qtde > 0)
+                                {
+                                    <div class="card" style="width: 15rem;">
+                                        <img class="card-img-top" src="@item.ImgNota" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Disponível : @item.Qtde Notas</h5>
+                                        </div>
+                                    </div>
+
+                                }
+                            </div>
+                        }
+                    </td>
+                    <td>
+                        @foreach (var item in Model)
+                        {
+                            <div class="col">
+                                @if (item.Valor == 5 && item.Qtde > 0)
+                                {
+                                    <div class="card" style="width: 15rem;">
+                                        <img class="card-img-top" src="@item.ImgNota" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Disponível : @item.Qtde Notas</h5>
+                                        </div>
+                                    </div>
+
+                                }
+                            </div>
+                        }
+                    </td>
+                    <td >
+                        @foreach (var item in Model)
+                        {
+                            <div class="col">
+                                @if (item.Valor == 10 && item.Qtde > 0)
+                                {
+                                    <div class="card" style="width: 15rem;">
+                                        <img class="card-img-top" src="@item.ImgNota" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Disponível : @item.Qtde Notas</h5>
+                                        </div>
+                                    </div>
+
+                                }
+                            </div>
+                        }
+                    </td>
+                </tr>
+            </table>
+          
+        </div>
+        
+        <div  class="row">
+            <table id="centralizar">
+                <tr>
+
+                    <td>
+                        @foreach (var item in Model)
+                        {
+                            <div class="col">
+                                @if (item.Valor == 20 && item.Qtde > 0)
+                                {
+                                    <div class="card" style="width: 15rem;">
+                                        <img class="card-img-top" src="@item.ImgNota" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Disponível : @item.Qtde Notas</h5>
+                                        </div>
+                                    </div>
+
+                                }
+                            </div>
+                        }
+                    </td>
+                    <td >
+                        @foreach (var item in Model)
+                        {
+                            <div class="col">
+                                @if (item.Valor == 50 && item.Qtde > 0)
+                                {
+                                    <div class="card" style="width: 15rem;">
+                                        <img class="card-img-top" src="@item.ImgNota" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Disponível : @item.Qtde Notas</h5>
+                                        </div>
+                                    </div>
+
+                                }
+                            </div>
+                        }
+                    </td>
+                    <td >
+                        @foreach (var item in Model)
+                        {
+                            <div class="col">
+                                @if (item.Valor == 100 && item.Qtde > 0)
+                                {
+                                    <div class="card" style="width: 15rem;">
+                                        <img  class="card-img-top" src="@item.ImgNota" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Disponível : @item.Qtde Notas</h5>
+                                        </div>
+                                    </div>
+
+                                }
+                            </div>
+                        }
+                    </td>
+                </tr>
+            </table>
+        </div>
+       
+
+
+    </div>
+
+
+        <hr />
+        <br />
+        <br />
+        <div class="text-center">
+            <a id="bt-sacar" class="btn btn-outline-success" asp-controller="Saques" asp-action="Create"> SACAR </a>
+        </div>
+    }
+    else
+    {
+
+        <div class="card text-center ">
+            <div class="card-header">
+                <h1>Ateção!!</h1>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title"><img class="card-img-top" src="~/img/Atenção.png" alt="Card image cap" width="300" height="300"></h5>
+                <h2 class="card-text">No Momento Não temos Cédulas Disponíveis.</h2>
+
+            </div>
+            <div class="card-footer text-muted">
+                <a id="bt-sacar" class="btn btn-outline-warning" asp-controller="Home" asp-action="Index"> Sair </a>
+
+            </div>
+        </div>
+
+
+    }
+
+
+
+
+
+}
+
+
+
+
+
+
+

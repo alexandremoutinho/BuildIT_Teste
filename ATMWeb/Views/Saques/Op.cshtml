@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "Op";
+}
+<div class="text-center">
+
+    <div>
+
+        <img src="~/img/Saque_ok.png" width="550" height="250" />
+        <br />
+        <br />
+        <br />
+        <h3 class="alert alert-success" role="alert"> Saque Realizado com Sucesso !!!</h3>
+
+    </div>
+
+    <br /><br /><br /><br />
+
+    <div>
+
+        <h2>Deseja Sacar Novamente ?</h2>
+        <a id="bt-sacar" class="btn btn-primary" asp-controller="Notas" asp-action="NotasDisponiveis"> Sim </a>
+        <a id="bt-sacar" class="btn btn-danger" asp-controller="Home" asp-action="Index">Não</a>
+
+    </div>
+
+
+
+</div>

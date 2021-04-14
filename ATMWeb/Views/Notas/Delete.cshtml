@@ -1,0 +1,48 @@
+﻿@model ATMWeb.Models.Notas
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<div class="container">
+    <h1>Deletar Nota</h1>
+
+
+    <img class="text-center" src="@Html.DisplayFor(model => model.ImgNota)" width="300" height="150">
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nota)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nota)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Qtde)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Qtde)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ImgNota)
+        </dt>
+
+    </dl>
+
+    <h4 class="alert alert-danger col-md-5">Tem Certeza que deseja Deletar??</h4>
+
+    <hr/>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="NotasId" />
+        <input type="submit" value="Deletar" class="btn btn-danger" />
+        <a class="btn btn-primary" asp-action="Index">Voltar</a>
+    </form>
+</div>
